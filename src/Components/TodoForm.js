@@ -1,9 +1,9 @@
 import React,{useState}from 'react'
-import {Container,Input,Button,Form,InputGroup} from "reactstrap"
+import {Input,Button,Form,InputGroup} from "reactstrap"
 import { v4 } from 'uuid'
 
 //redux stuff
-import { connect, Connect } from 'react-redux'
+import { connect} from 'react-redux'
 import {addTodo} from "../action/todo"
 
 

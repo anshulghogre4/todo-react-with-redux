@@ -1,27 +1,27 @@
 import React from 'react'
 import {ListGroup,ListGroupItem} from "reactstrap"
-import {FaCheckDouble} from "react-icons"
+import {FaCheckDouble} from "react-icons/fa"
 
 // redux
-import { connect, Connect } from 'react-redux'
+import { connect} from 'react-redux'
 import {removeTodo} from "../action/todo"
 
 
 const Todo = ({todos, markComplete}) => {
-  return (
-    <div>
+    return (
         <ListGroup className="mt-5 mb-2 items" >
-{todos.map(todo=>{
+    { todos && todos.map((todo)=>{
+        return(
     <ListGroupItem key={todo.id}>
         {todo.title}
         <span className='float-end' onClick={()=> markComplete(todo.id)} ><FaCheckDouble/></span>
-    </ListGroupItem>
+    </ListGroupItem>)
 })}
 </ListGroup>
-    </div>
+    
   )
 }
-    const mapStateToProps = state = ({
+    const mapStateToProps = state => ({
         todos: state.todos
     })
 
